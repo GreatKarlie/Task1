@@ -137,50 +137,33 @@
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="ui"> 
-                    <form action="" class="form-group">
+                    <form action="" class="form-group" method="POST">
                         <div class="row">
                                                    
                             <div class="col-lg-9">
                                 <label for="firstName">Name:</label>
-                                <input type="text" id="firstName" class="form-control" placeholder="Michael" name="name"><br>
+                                <input name="name" type="text" id="firstName" class="form-control" placeholder="Michael" name="name"><br>
                             </div>
 
                             <div class="col-lg-9">
                                 <label for="surName">Surname:</label>
-                                <input type="text" id="surName" class="form-control" placeholder="Scott"><br>
+                                <input name="surname" type="text" id="surName" class="form-control" placeholder="Scott"><br>
                             </div>
                         </div>
                             
                                 <label for="E-mail">E-mail:</label>
-                                <input type="email" id="E-mail" class="form-control" placeholder="someone@somewhere.com"><br>
-                                <input type="submit" id="register" class="btn btn-primary">
-                                <script src="https://www.google.com/recaptcha/api.js?render=put your site key here"></script>
-                                <script>
-                                    grecaptcha.ready(function(){
-                                        grecaptcha.execute('6LeUVu0aAAAAAJN-y7OPwZict3msn6zwtGy1ABqR', {action:'homepage'}).then(function(token){
-
-                                        });
-                                    });
-                                </script>
+                                <input type="email" id="E-mail" class="form-control" placeholder="someone@somewhere.com" name="email"><br>
+                                <textarea name="message"  cols="30" rows="10"></textarea> <br><br>
+                                <input type="submit" id="submit" class="btn btn-primary">
+                                <input type="button" value="Send Email" onclick="sendEmail()">
                             </form>
 
                             <div class="col-lg-3">
                                 
-                            </div>
-
-                        
-                   
-                </div>
+                            </div>                  
                     </div>
-                    <div class="col-lg-3">
-
                     </div>
-
-                </div>
-
-
-
-               
+                </div>               
             </div>                   
         </div>
         <footer id="footer">
