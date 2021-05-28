@@ -34,11 +34,11 @@ nav ul{
 nav li{
     cursor: pointer;
     font-size: 20px;
-    color: rgba(32, 17, 32, 0.932); 
+    color: rgba(78, 25, 78, 0.932); 
 }
 
 nav li:hover{
-    background-color: rgba(44, 23, 44, 0.932);
+    background-color: purple;
     color: white;
     padding: 20px;
 }
@@ -224,8 +224,8 @@ height: 40px;
   }
 
 
-/*NEWSLETTER SECTION*/
-#newsLetter{
+/*SOCIALS SECTION*/
+#socials{
     width: 100%;
     padding: 30px;
     display: flex;

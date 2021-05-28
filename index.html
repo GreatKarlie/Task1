@@ -10,7 +10,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6LeUVu0aAAAAAJN-y7OPwZict3msn6zwtGy1ABqR"></script>    
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
     <title>Project Literacy</title>
     <link rel="icon" href="project_literacy_logo.png" type="image">
 </head>
@@ -22,8 +23,8 @@
                 <li><a href="#"></a>HOME</li>
                 <li><a href="#"></a>ABOUT US</li>
                 <li><a href="#"></a>OUR SPONSORS</li>
+                <li><a href="#"></a>OUR SOCIALS</li>
                 <li><a href="#"></a>CONTACT US</li>
-                <li><a href="#"></a>SUBSCRIBE TO NEWSLETTER</li>
             </ul>
         </nav>
         <br><br><br><br>
@@ -48,18 +49,12 @@
             <div id="missionAU">
                 <h4>Our Mission</h4>
                 <img src="Project_Literacy_Icons_mission.svg" alt="">
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi laborum nobis
-                 ea officia dignissimos recusandae distinctio, perferendis voluptates!
-                 Eos, quam deleniti maiores magnam minima consequatur suscipit libero quos 
-                 animi laboriosam.</p>
+                <p> To deliver a wide range of Education and Training programmes to educationally disadvantaged people by way of education centres, educator training, curriculum development and community outreach</p>
                 </div>
             <div id="visionAU">
                 <h4>Our Vision</h4>
                 <img src="Project_Literacy_Icons_vision.svg" alt="">
-                <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi laborum nobis
-                    ea officia dignissimos recusandae distinctio, perferendis voluptates!
-                    Eos, quam deleniti maiores magnam minima consequatur suscipit libero quos 
-                    animi laboriosam.</p>
+                <p> To effect broad based black socio-economic development through high quality education and training programmes.</p>
             </div>
         </div>
         <div id="rightAU">
@@ -128,12 +123,14 @@
                   <span class="dot" onclick="currentSlide(4)"></span>
                   <span class="dot" onclick="currentSlide(5)"></span>
                 </div>
-                               
+                          
+                
+                
             </div>
             
 
-        <div id="newsLetter">
-            <h2>SIGN UP TO OUR NEWSLETTER</h2>      
+        <div id="socials">
+            <h2>CONTACT US</h2>      
             <div class="signUp">
                 <div class="row">
 
@@ -145,16 +142,17 @@
                                                    
                             <div class="col-lg-9">
                                 <label for="firstName">Name:</label>
-                                <input  type="text" id="firstName" class="form-control" placeholder="Michael" name="data[name]" onchange="updateMessage(name, value)"><br>
+                                <input  type="text" id="firstName" class="form-control" placeholder="Michael" name="name"><br>
                             </div>
 
                             <div class="col-lg-9">
                                 <label for="surName">Surname:</label>
-                                <input name="data[surname]" type="text" id="surName" class="form-control" placeholder="Scott" onchange="updateMessage(name, value)"><br>
+                                <input name="surname" type="text" id="surName" class="form-control" placeholder="Scott"><br>
                             </div>
                         </div>
                             
                                 <label for="E-mail">E-mail:</label>
+                                <input type="email" name="email" id="email">
                                 <textarea name="message"  cols="30" rows="10"></textarea> <br><br>
                                 <input type="submit" id="submit" class="btn btn-primary" onclick="sendEmail()">
                             </form>                                                                                                                                                                                                                                                                                        
@@ -185,7 +183,6 @@
           }).then(
               response => response.json()
           ).then((html) => {
-            // you can put any JS code here
             alert('success')
           });
         });
@@ -196,9 +193,9 @@
     Host : "smtp.gmail.com",
     Username : "rayaan.karlie@younglings.africa",
     Password : "Password1",
-    To : 'dummythicdata1@gmail.com',
-    From : "karlilersa2@gmail,com",
-    Subject : "This is the subject",
+    To : 'projectlit95@gmail.com',
+    From : "rayaan.karlie@younglings.africa",
+    Subject : "You got into contact",
     Body : "And this is the body"
 }).then(
   message => alert(message)
