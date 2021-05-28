@@ -49,7 +49,7 @@ message => alert(message)
 function sendEmail (argument){
 
   Email.send({
-Host : "smtp.mailtrap.io",
+SecureToken : "629ae7fe-b8ed-4da6-a87a-f2eec2060461",
 Username : "c1ec814c1bd300",
 Password : "b970a59c5dd46a",
 To : 'dummythicdata1@gmail.com',
@@ -60,3 +60,5 @@ Body : "The user would like to get in touch"
 message => alert(message)
 );
 }
+
+//629ae7fe-b8ed-4da6-a87a-f2eec2060461
