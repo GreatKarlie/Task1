@@ -52,7 +52,7 @@ function sendEmail (argument){
 Host : "smtp.mailtrap.io",
 Username : "c1ec814c1bd300",
 Password : "b970a59c5dd46a",
-To : 'dummythidata1@gmail.com',
+To : 'dummythicdata1@gmail.com',
 From : "rayaan.karlie@younglings.africa",
 Subject : "Contact user",
 Body : "The user would like to get in touch"
