@@ -26,21 +26,37 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-/*Large-scale project management
-Materials Development
-                    
-Educational consultation across the spectrum from family literacy programmes, enhancing language and 
-communication in primary school children, project management of large scale AET training interventions, 
-teaching AET and other learning interventions to illiterate adults, AET and bridging training programmes for youth and adults*/
 
+/*const btn = document.querySelector('#submit');
+const inputs = document.querySelector('form');
+
+btn.addEventListener('cilck',() =>{
 Email.send({
-  Host : "smtp.yourisp.com",
-  Username : "username",
-  Password : "password",
+  Host : "ssmtp@gmail.com",
+  Username : "c1ec814c1bd300",
+  Password : "b970a59c5dd46a",
   To : 'them@website.com',
-  From : "you@isp.com",
-  Subject : "This is the subject",
-  Body : "And this is the body"
+  From : inputs.elements["email"].value,
+  Subject : "Contact us",
+  Body : inputs.elements["message"].value + "<br>" + inputs.elements["name"].value + "<br>" + inputs.elements["surname"].value
+}).then(msg=> alert("We received your message"))
+message => alert(message)
+);
+});
+
+*/
+
+function sendEmail (argument){
+
+  Email.send({
+Host : "smtp.mailtrap.io",
+Username : "c1ec814c1bd300",
+Password : "b970a59c5dd46a",
+To : 'dummythicdata@gmail.com',
+From : "rayaan.karlie@younglings.africa",
+Subject : "Contact user",
+Body : "The user would like to get in touch"
 }).then(
 message => alert(message)
 );
+}
