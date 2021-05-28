@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://www.google.com/recaptcha/api.js?render=6LeUVu0aAAAAAJN-y7OPwZict3msn6zwtGy1ABqR"></script>
-    <script src="app.js"></script>\
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeUVu0aAAAAAJN-y7OPwZict3msn6zwtGy1ABqR"></script>    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <title>Project Literacy</title>
     <link rel="icon" href="project_literacy_logo.png" type="image">
 </head>
@@ -34,7 +33,11 @@
             </div>
             <div id="donateSection">
                 <h1>PROJECT LITERACY</h1>
-                <button> <a href="index.php"></a> Donate</button>
+                <form action="https://www.sandbox.paypal.com/donate" method="post" target="_top">
+                    <input type="hidden" name="hosted_button_id" value="8Y5TVWDV7E28U" />
+                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_ZA/i/scr/pixel.gif" width="1" height="1" />
+                    </form>
             </div>
         </div>
         </div>
@@ -137,30 +140,26 @@
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="ui"> 
-                    <form action="" class="form-group" method="POST">
+                    <form action="https://sheetdb.io/api/v1/rsmmeg4vx4erg" class="form-group" method="POST" id="form">
                         <div class="row">
                                                    
                             <div class="col-lg-9">
                                 <label for="firstName">Name:</label>
-                                <input name="name" type="text" id="firstName" class="form-control" placeholder="Michael" name="name"><br>
+                                <input  type="text" id="firstName" class="form-control" placeholder="Michael" name="data[name]" onchange="updateMessage(name, value)"><br>
                             </div>
 
                             <div class="col-lg-9">
                                 <label for="surName">Surname:</label>
-                                <input name="surname" type="text" id="surName" class="form-control" placeholder="Scott"><br>
+                                <input name="data[surname]" type="text" id="surName" class="form-control" placeholder="Scott" onchange="updateMessage(name, value)"><br>
                             </div>
                         </div>
                             
                                 <label for="E-mail">E-mail:</label>
-                                <input type="email" id="E-mail" class="form-control" placeholder="someone@somewhere.com" name="email"><br>
                                 <textarea name="message"  cols="30" rows="10"></textarea> <br><br>
-                                <input type="submit" id="submit" class="btn btn-primary">
-                                <input type="button" value="Send Email" onclick="sendEmail()">
-                            </form>
+                                <input type="submit" id="submit" class="btn btn-primary" onclick="sendEmail()">
+                            </form>                                                                                                                                                                                                                                                                                        
 
-                            <div class="col-lg-3">
-                                
-                            </div>                  
+                                           
                     </div>
                     </div>
                 </div>               
@@ -175,6 +174,37 @@
         </footer>
     </div>
     </div>
+    
+      <script>
+        var form = document.getElementById('form');
+        form.addEventListener("submit", e => {
+          e.preventDefault();
+          fetch(form.action, {
+              method : "POST",
+              body: new FormData(document.getElementById("form")),
+          }).then(
+              response => response.json()
+          ).then((html) => {
+            // you can put any JS code here
+            alert('success')
+          });
+        });
+      </script>
+    <script>
+        function sendEmail (){
+            Email.send({
+    Host : "smtp.gmail.com",
+    Username : "rayaan.karlie@younglings.africa",
+    Password : "Password1",
+    To : 'dummythicdata1@gmail.com',
+    From : "karlilersa2@gmail,com",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
